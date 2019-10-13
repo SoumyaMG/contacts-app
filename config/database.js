@@ -2,7 +2,7 @@ const mongoose=require('mongoose')
 
 mongoose.Promise=global.Promise
 
-mongoose.connect('mongodb://localhost:27017/contacts-app',{useNewUrlParser:true,useUnifiedTopology: true})
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/contacts-app',{useNewUrlParser:true,useUnifiedTopology: true})
 .then(()=>{
     console.log('connection to db extablished successfully ..!!!')
 })
